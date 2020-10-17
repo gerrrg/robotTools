@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Activating for current user: $NON_SU_USER"
+sudo sed -i "s/TEMPLATE_USER/$NON_SU_USER/g" /etc/systemd/system/robot.service
+
+sudo systemctl enable robot
+sudo systemctl start robot
+sudo systemctl restart robot
+
+echo -e '\n\tInstalling robot finished. You may want to reboot\n'

@@ -1,0 +1,18 @@
+source gnuscreen-base
+
+########################################
+screen -t BASH 0
+stuff 'echo "Welcome to robot"'
+stuff 'echo "Escape key has been remapped to \\"'
+
+########################################
+screen -t ROS 1
+stuff 'source /opt/ros/melodic/setup.bash'
+stuff 'roscore'
+
+########################################
+screen -t HTOP 2
+stuff 'htop'
+
+########################################
+
