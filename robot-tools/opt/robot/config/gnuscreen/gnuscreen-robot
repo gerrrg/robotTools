@@ -1,9 +1,20 @@
 source gnuscreen-base
 
+# Each of the blocks below launches a new screen tab
+# To create your own, follow the template below
+# screen -t NAME <number>
+# stuff 'echo "hello world"'
+#
+# IMPORTANT make sure that each line that you 'stuff' into your tab ends in a carriage return
+# To type this character in emacs, enter Ctrl+q Ctrl+m
+# In emacs, this character will appear as '^M'
+
 ########################################
 screen -t BASH 0
 stuff 'echo "Welcome to robot"'
 stuff 'echo "Escape key has been remapped to \\"'
+stuff 'echo "To move from tab to tab, use Ctrl+LEFT/RIGHT"'
+stuff 'echo "To exit from screen, use Ctrl+\\ and then press d"'
 
 ########################################
 screen -t ROS 1
