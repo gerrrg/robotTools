@@ -25,7 +25,7 @@ To install it on a robot...
 - To attach to the screen: _screen -x robot_
 - Once inside the screen, navigate with: Ctrl+(left,right) arrow
 - To exit the screen, Ctrl+\ then press 'd'
-- Standard gnuscreen commands are the same, but the escape key is remapped to '\'
+- Standard gnuscreen commands are the same, but the escape key is remapped to \\
 
 ## Configuration
 - Explore the opt/robot/config folder
