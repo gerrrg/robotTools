@@ -1,0 +1,2 @@
+*/NEW_DATA_FOLDER_TIME * * * * TEMPLATE_USER /bin/bash /opt/robot/scripts/update_data_directory.sh >> /tmp/z_data_folder.log
+

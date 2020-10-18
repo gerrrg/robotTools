@@ -1,0 +1,1 @@
+4-59/5 * * * * TEMPLATE_USER /bin/bash /opt/robot/scripts/delete_old_files.sh MOUNT_DRIVE FOLDER PERCENT >> /tmp/z_delete_data.log
