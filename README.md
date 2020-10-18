@@ -16,11 +16,10 @@ The default system also launches two cron jobs
 ## Installation
 To install it on your own system, run the script _build_and_install.sh_
 To install it on a robot...
-  - _pack_deb.sh_
-  - scp robot-tools.deb install_deb.sh your_robot@<robot_ip_address>:/tmp/
-  
-  - (On robot) _cd /tmp/_
-  - (On robot) _./install_deb.sh_
+- _pack_deb.sh_
+- scp robot-tools.deb install_deb.sh your_robot@<robot_ip_address>:/tmp/
+- (On robot) _cd /tmp/_
+- (On robot) _./install_deb.sh_
   
 ## Using the custom screen session
 - To attach to the screen: _screen -x robot_
