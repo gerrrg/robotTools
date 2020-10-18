@@ -8,6 +8,7 @@ The default system is an auto-launching screen session that launches three tabs.
   - BASH: empty shell to use
   - ROS: roscore
   - HTOP: htop
+Users can add whatever additional processes they want (ex. sensor drivers, image processing, path planning...)    
     
 The default system also launches two cron jobs
   - data_folder: creates a new folder for robot data every X minutes
