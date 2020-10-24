@@ -2,6 +2,17 @@
 echo "Activating for current user: $NON_SU_USER"
 source /opt/robot/config/robot.config
 
+if [ "$SUDO_WITHOUT_PASSWORD" -eq "0" ]; then
+    sudo rm -rf /etc/sudoers.d/robot-$NON_SU_USER
+    sudo rm -rf /etc/sudoers.d/TEMPLATE_USER
+else
+    # file activates pw-less sudo
+    sudo sed -i "s/TEMPLATE_USER/$NON_SU_USER/g" /etc/sudoers.d/TEMPLATE_USER
+    sudo mv /etc/sudoers.d/TEMPLATE_USER /etc/sudoers.d/robot-$NON_SU_USER
+    # needs to be owned by root
+    sudo chown root:root /etc/sudoers.d/robot-$NON_SU_USER
+fi
+
 # activate robot service for the user who installed it
 sudo sed -i "s/TEMPLATE_USER/$NON_SU_USER/g" /etc/systemd/system/robot.service
 

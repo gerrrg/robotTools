@@ -23,6 +23,8 @@ dt=$(date '+%Y-%m-%d-%H-%M-%S');
 subfolder_path=$DATA_FOLDER_ROOT/$dt
 
 mkdir $subfolder_path
+rm -rf $DATA_FOLDER_ROOT/most_recent
+ln -s $subfolder_path $DATA_FOLDER_ROOT/most_recent
 echo $subfolder_path > /tmp/robot-data-folder-path
 echo "Created $subfolder_path"
 echo ""
