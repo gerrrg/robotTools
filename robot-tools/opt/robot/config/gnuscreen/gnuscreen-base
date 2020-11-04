@@ -16,7 +16,6 @@ vbell_msg "bell on %t (%n)"
 
 # look and feel
 caption always "%{= kw}%-w%{= gW}%n %t%{-}%+w %-= YOURNAMEHERE - %Y-%m-%d %C:%s"
-# hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
 
 activity "Activity in %t(%n)"
 
