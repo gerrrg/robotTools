@@ -1,3 +1,8 @@
 #!/bin/bash
 
-sudo systemctl stop robot
+if (systemctl -q is-active robot)
+then    
+    echo "Stopping service: robot"
+    sudo systemctl stop robot
+    exit 1
+fi
