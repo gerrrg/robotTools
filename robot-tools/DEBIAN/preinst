@@ -1,8 +1,5 @@
 #!/bin/bash
 
-if (systemctl -q is-active robot)
-then    
-    echo "Stopping service: robot"
-    sudo systemctl stop robot
-    exit 1
+if service --status-all | grep -Fq 'robot'; then    
+  sudo service robot stop    
 fi
