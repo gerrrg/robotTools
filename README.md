@@ -4,10 +4,11 @@
 Robot Tools is a group of utilities packed into an auto-launching ecosystem. It is designed to be a framework that you can add your own programs and scripts to in order to streamline bringing up your robot.
 
 ## What does it do?
-The default system is an auto-launching screen session that launches three tabs.
+The default system is an auto-launching screen session that launches four tabs.
   - BASH: empty shell to use
   - ROS: roscore
   - HTOP: htop
+  - CPU: log CPU usage at 1Hz to the data folder
 
 Users can add whatever additional processes they want (ex. sensor drivers, image processing, path planning...)    
     
@@ -26,7 +27,7 @@ To install it on a robot...
 ## Using the custom screen session
 - To attach to the screen: _screen -x robot_
 - Once inside the screen, navigate with: Ctrl+(left,right) arrow
-- To exit the screen, Ctrl+\ then press 'd'
+- To exit the screen, Ctrl+\\ then press 'd'
 - Standard gnuscreen commands are the same, but the escape key is remapped to \\
 
 ## Configuration
