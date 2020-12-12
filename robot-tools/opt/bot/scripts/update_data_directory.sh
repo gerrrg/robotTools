@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # get the data_folder
-source /opt/robot/config/robot.config
+source /opt/bot/config/robot.config
 
 echo "Update Data Directory"
 date
 
 if [ "$ENABLE_NEW_DATA_FOLDERS" -eq "0" ]; then
    echo "New folder script deactivated."
-   echo "To change, activate ENABLE_NEW_DATA_FOLDERS in /opt/robot/config/robot.config"
+   echo "To change, activate ENABLE_NEW_DATA_FOLDERS in /opt/bot/config/robot.config"
    echo "Quitting. ";
    exit;
 fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Activating for current user: $NON_SU_USER"
-source /opt/robot/config/robot.config
+source /opt/bot/config/robot.config
 
 if [ "$SUDO_WITHOUT_PASSWORD" -eq "0" ]; then
     sudo rm -rf /etc/sudoers.d/robot-$NON_SU_USER
@@ -31,7 +31,7 @@ sudo chown root:root /etc/cron.d/*
 sudo chmod 644 /etc/cron.d/*
 
 # make all scripts executable
-sudo chmod +x /opt/robot/scripts/*
+sudo chmod +x /opt/bot/scripts/*
 
 # enable, start, and restart robot task
 sudo systemctl enable robot

@@ -28,6 +28,6 @@ stuff 'htop'
 
 ########################################
 screen -t CPU 3
-stuff 'cd /opt/robot/scripts/'
+stuff 'cd /opt/bot/scripts/'
 stuff 'echo "Running CPU logger..."'
 stuff './get_cpu.sh'

@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 User=TEMPLATE_USER
-ExecStart=/usr/bin/screen -DmS robot -c /opt/robot/config/gnuscreen/gnuscreen-robot
+ExecStart=/usr/bin/screen -DmS robot -c /opt/bot/config/gnuscreen/gnuscreen-robot
 ExecStop=/usr/bin/screen -S robot -X quit
 
 [Install]

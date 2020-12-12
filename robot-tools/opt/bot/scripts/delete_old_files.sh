@@ -93,10 +93,10 @@ process_file () {
 }
 
 show_header
-source /opt/robot/config/robot.config
+source /opt/bot/config/robot.config
 if [ "$ENABLE_DATA_DELETION" -eq "0" ]; then
    echo "Data deletion deactivated."
-   echo "To change, activate ENABLE_DATA_DELETION in /opt/robot/config/robot.config"
+   echo "To change, activate ENABLE_DATA_DELETION in /opt/bot/config/robot.config"
    echo "Quitting. ";
    exit;
 fi
