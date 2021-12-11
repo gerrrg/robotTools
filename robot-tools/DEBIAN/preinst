@@ -1,5 +1,0 @@
-#!/bin/bash
-
-if service --status-all | grep -Fq 'robot'; then    
-  sudo service robot stop    
-fi
