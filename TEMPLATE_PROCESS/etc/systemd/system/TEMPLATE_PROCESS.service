@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 User=TEMPLATE_USER
-ExecStart=/usr/bin/screen -DmS TEMPLATE_PROCESS -c /opt/bot/config/gnuscreen/gnuscreen-TEMPLATE_PROCESS
+ExecStart=/usr/bin/screen -DmS TEMPLATE_PROCESS -c /opt/TEMPLATE_PROCESS/config/gnuscreen/gnuscreen-TEMPLATE_PROCESS
 ExecStop=/usr/bin/screen -S TEMPLATE_PROCESS -X quit
 
 [Install]
