@@ -1,0 +1,41 @@
+#!/bin/bash
+echo "Activating for current user: $NON_SU_USER"
+source /opt/TEMPLATE_PROCESS/config/TEMPLATE_PROCESS.config
+
+if [ "$SUDO_WITHOUT_PASSWORD" -eq "0" ]; then
+    sudo rm -rf /etc/sudoers.d/TEMPLATE_PROCESS-$NON_SU_USER
+    sudo rm -rf /etc/sudoers.d/TEMPLATE_USER
+else
+    # file activates pw-less sudo
+    sudo sed -i "s/TEMPLATE_USER/$NON_SU_USER/g" /etc/sudoers.d/TEMPLATE_USER
+    sudo mv /etc/sudoers.d/TEMPLATE_USER /etc/sudoers.d/TEMPLATE_PROCESS-$NON_SU_USER
+    # needs to be owned by root
+    sudo chown root:root /etc/sudoers.d/TEMPLATE_PROCESS-$NON_SU_USER
+fi
+
+# activate TEMPLATE_PROCESS service for the user who installed it
+sudo sed -i "s/TEMPLATE_USER/$NON_SU_USER/g" /etc/systemd/system/TEMPLATE_PROCESS.service
+
+# activate cron jobs for user
+sudo sed -i "s/TEMPLATE_USER/$NON_SU_USER/g" /etc/cron.d/*
+
+# configure cron jobs with parameters from TEMPLATE_PROCESS.config
+# NOTE: if you're adding parameters that have '/' in it, use the '|' delimiter for sed
+sudo sed -i "s/NEW_DATA_FOLDER_TIME/$DATA_FOLDER_RATE_MINUTES/g" /etc/cron.d/data_folder
+sudo sed -i "s|MOUNT_DRIVE|$DATA_DRIVE_NAME|g" /etc/cron.d/delete_data
+sudo sed -i "s|FOLDER|$DATA_FOLDER_ROOT|g" /etc/cron.d/delete_data
+sudo sed -i "s/PERCENT/$DATA_MAX_DRIVE_PERCENT/g" /etc/cron.d/delete_data
+
+# set necessary ownership/permissions for cron jobs
+sudo chown root:root /etc/cron.d/*
+sudo chmod 644 /etc/cron.d/*
+
+# make all scripts executable
+sudo chmod +x /opt/TEMPLATE_PROCESS/scripts/*
+
+# enable, start, and restart TEMPLATE_PROCESS task
+sudo systemctl enable TEMPLATE_PROCESS
+sudo systemctl start TEMPLATE_PROCESS
+sudo systemctl restart TEMPLATE_PROCESS
+
+echo -e '\n\tInstalling TEMPLATE_PROCESS finished. You may want to reboot\n'

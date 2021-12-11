@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if service --status-all | grep -Fq 'TEMPLATE_PROCESS'; then    
+  sudo service TEMPLATE_PROCESS stop    
+fi
