@@ -3,8 +3,7 @@ source gnuscreen-base
 # Each of the blocks below launches a new screen tab
 # To create your own, follow the template below
 # screen -t NAME <number>
-# stuff 'echo "hello world"
-'
+# stuff 'echo "hello world"'
 #
 # IMPORTANT make sure that each line that you 'stuff' into your tab ends in a carriage return
 # To type this character in emacs, enter Ctrl+q Ctrl+m
@@ -12,32 +11,17 @@ source gnuscreen-base
 
 ########################################
 screen -t BASH 0
-stuff 'echo "Welcome to robot"
-'
-stuff 'echo "Escape key has been remapped to \\"
-'
-stuff 'echo "To move from tab to tab, use Ctrl+LEFT/RIGHT"
-'
-stuff 'echo "To exit from screen, use Ctrl+\\ and then press d"
-'
+stuff 'echo "Welcome to TEMPLATE_PROCESS"'
+stuff 'echo "Escape key has been remapped to \\"'
+stuff 'echo "To move from tab to tab, use Ctrl+LEFT/RIGHT"'
+stuff 'echo "To exit from screen, use Ctrl+\\ and then press d"'
 
 ########################################
-screen -t ROS 1
-stuff 'source /opt/ros/melodic/setup.bash
-'
-stuff 'roscore
-'
+screen -t HTOP 1
+stuff 'htop'
 
 ########################################
-screen -t HTOP 2
-stuff 'htop
-'
+screen -t DO_SOMETHING 2
+stuff 'cd /opt/TEMPLATE_PROCESS/scripts/'
+stuff 'echo "do something interesting!"'
 
-########################################
-screen -t CPU 3
-stuff 'cd /opt/bot/scripts/
-'
-stuff 'echo "Running CPU logger..."
-'
-stuff './get_cpu.sh
-'
