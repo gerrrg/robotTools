@@ -23,7 +23,4 @@ done
 
 # find and replace all instances of TEMPLATE_PROCESS
 find $1 -type f -name "*" -print0 | xargs -0 sed -i '' -e "s/TEMPLATE_PROCESS/$1/g"
-
-cp pack_deb.sh $1_pack_deb.sh
-cp install_deb.sh $1_install_deb.sh
-find . -type f -name "$1*" -print0 | xargs -0 sed -i '' -e "s/TEMPLATE_PROCESS/$1/g"
+find . -type f -name "*deb.sh" -print0 | xargs -0 sed -i '' -e "s/TEMPLATE_PROCESS/$1/g"
